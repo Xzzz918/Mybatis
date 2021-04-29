@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace必须与接口路径完全一致，不然无法绑定接口-->
+<mapper namespace="com.gemini.dao.UserMapper">
+<!--    mapper配置文件,相当于UserMapper的实现类-->
+<!--    id：对应的namespace中的方法名；resultType：SQL语句的返回值类型；parameterType：参数类型-->
+    <select id="getUserList" resultType="com.gemini.pojo.User">
+        select * from mybatis.user
+    </select>
+
+    <select id="getUserById" resultType="com.gemini.pojo.User" parameterType="int">
+        select * from mybatis.user where id = #{id}
+    </select>
+
+    <select id="getUserById2" parameterType="map" resultType="com.gemini.pojo.User">
+        select * from mybatis.user where id = #{UserId} and name = #{UserName}
+    </select>
+
+    <insert id="insertUser" parameterType="com.gemini.pojo.User">
+        insert into mybatis.user (id, name, pwd) values (#{id},#{name},#{pwd})
+    </insert>
+
+<!--传递map的key，可以随意选择参数，而不用把所有参数都写出来-->
+    <insert id="addUser" parameterType="map">
+        insert into mybatis.user (id, name, pwd) values (#{UserId},#{UserName},#{UserPwd})
+    </insert>
+
+    <update id="update" parameterType="com.gemini.pojo.User">
+        update mybatis.user set name=#{name},pwd=#{pwd} where id = #{id}
+    </update>
+
+    <delete id="deleteUser" parameterType="int">
+        delete from mybatis.user where id = #{id}
+    </delete>
+
+    <select id="getUserLike" parameterType="String" resultType="com.gemini.pojo.User">
+        select * from mybatis.user where name like #{value}
+    </select>
+
+</mapper>

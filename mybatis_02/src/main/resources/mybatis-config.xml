@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--    引入外部配置文件-->
+    <properties resource="db.properties">
+<!--    Mybatis将会首先读取在 properties 元素体内指定的属性，
+        然后根据 properties 元素中的 resource 属性读取类路径下属性文件，
+        或根据 url 属性指定的路径读取属性文件，并覆盖之前读取过的同名属性。-->
+        <property name="username" value="root"/>
+        <property name="password" value="root"/>
+    </properties>
+    <!--    给实体类起别名-->
+    <typeAliases>
+<!--        方式一：适合实体类较少的情况-->
+        <typeAlias type="com.gemini.pojo.User" alias="User"/>
+<!--        方式二：适合实体类非常多的情况，可以通过在实体类上加@Alias(" ")注解方式实现自定义别名-->
+        <package name="com.gemini.pojo"/>
+    </typeAliases>
+    
+    <environments default="test">
+        <environment id="development">
+<!--       transactionManager type="[JDBC|MANAGED]"-->
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/mybatis?useSSL=true&amp;useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=UTC"/>
+                <property name="username" value="root"/>
+                <property name="password" value="root"/>
+            </dataSource>
+        </environment>
+        <environment id="test">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${url}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+<!--    每一个Mapper.xml都需要在mybatis配置文件中注册-->
+    <mappers>
+        <mapper resource="UserMapper.xml"/>
+    </mappers>
+</configuration>
