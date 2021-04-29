@@ -11,9 +11,18 @@
         <property name="username" value="root"/>
         <property name="password" value="root"/>
     </properties>
+
+    <settings>
+<!--        标准的日志工厂实现-->
+<!--        <setting name="logImpl" value="STDOUT_LOGGING"/>-->
+        <setting name="logImpl" value="LOG4J"/>
+    </settings>
     <!--    给实体类起别名-->
     <typeAliases>
+<!--        方式一：适合实体类较少的情况-->
         <typeAlias type="com.gemini.pojo.User" alias="User"/>
+<!--        方式二：适合实体类非常多的情况，可以通过在实体类上加@Alias(" ")注解方式实现自定义别名-->
+        <package name="com.gemini.pojo"/>
     </typeAliases>
     
     <environments default="test">
