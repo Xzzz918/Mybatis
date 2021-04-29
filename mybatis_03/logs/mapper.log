@@ -1,0 +1,3 @@
+2021-04-30 00:27:21 BaseJdbcLogger.java DEBUG ==>  Preparing: select * from mybatis.user where id = ? 
+2021-04-30 00:27:21 BaseJdbcLogger.java DEBUG ==> Parameters: 2(Integer)
+2021-04-30 00:27:22 BaseJdbcLogger.java DEBUG <==      Total: 1
