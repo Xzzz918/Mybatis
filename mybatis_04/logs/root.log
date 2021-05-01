@@ -1,0 +1,9 @@
+2021-05-01 20:24:54 LogFactory.java DEBUG Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+2021-05-01 20:24:54 PooledDataSource.java DEBUG PooledDataSource forcefully closed/removed all connections.
+2021-05-01 20:24:54 PooledDataSource.java DEBUG PooledDataSource forcefully closed/removed all connections.
+2021-05-01 20:24:54 PooledDataSource.java DEBUG PooledDataSource forcefully closed/removed all connections.
+2021-05-01 20:24:54 PooledDataSource.java DEBUG PooledDataSource forcefully closed/removed all connections.
+2021-05-01 20:24:54 JdbcTransaction.java DEBUG Opening JDBC Connection
+2021-05-01 20:24:54 PooledDataSource.java DEBUG Created connection 1485089044.
+2021-05-01 20:24:54 JdbcTransaction.java DEBUG Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@5884a914]
+2021-05-01 20:24:54 PooledDataSource.java DEBUG Returned connection 1485089044 to pool.

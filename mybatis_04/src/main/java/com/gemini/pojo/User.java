@@ -1,54 +1,27 @@
 package com.gemini.pojo;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
 /**
  * @author gemini
  * Created in  2021/4/27 19:17
  * 实体类
+ * Lombok的使用步骤:
+ * 安装插件
+ * 导入jar包
+ * 添加注解
  */
+//@Data:生成无参构造,getter,setter,toString,HashCode,equals
+@Data
+//@AllArgsConstructor:有参构造,但是这时候无参构造会消失
+@AllArgsConstructor
+//@NoArgsConstructor:无参构造,补加无参构造
+@NoArgsConstructor
 public class User {
     private int id;
     private String name;
-    private String password;
-
-    public User() {
-    }
-
-    public User(int id, String name, String password) {
-        this.id = id;
-        this.name = name;
-        this.password = password;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", password='" + password + '\'' +
-                '}';
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
+    private String pwd;
 }

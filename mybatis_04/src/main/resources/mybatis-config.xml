@@ -20,7 +20,7 @@
         </environment>
     </environments>
 
-<!--    需要在核心配置文件中绑定接口-->
+<!--    注意:必须要在核心配置文件中绑定接口-->
     <mappers>
         <mapper class="com.gemini.mapper.UserMapper"/>
     </mappers>

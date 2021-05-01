@@ -28,8 +28,9 @@ public class MyBatisUtil {
     }
     //获得sqlSession实例
     //SqlSession 提供了在数据库执行 SQL 命令所需的所有方法。
+    //autoCommit设置为True,即可自动提交事务
     public static SqlSession getSqlSession(){
-        return sqlSessionFactory.openSession();
+        return sqlSessionFactory.openSession(true);
     }
 
 }
