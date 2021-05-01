@@ -12,6 +12,7 @@
         <module>mybatis_01</module>
         <module>mybatis_02</module>
         <module>mybatis_03</module>
+        <module>mybatis_04</module>
     </modules>
 
     <properties>

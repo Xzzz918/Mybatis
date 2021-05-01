@@ -12,11 +12,11 @@
         <property name="password" value="root"/>
     </properties>
 
-    <settings>
+<!--    <settings>-->
 <!--        标准的日志工厂实现-->
 <!--        <setting name="logImpl" value="STDOUT_LOGGING"/>-->
-        <setting name="logImpl" value="LOG4J"/>
-    </settings>
+<!--        <setting name="logImpl" value="LOG4J"/>-->
+<!--    </settings>-->
     <!--    给实体类起别名-->
     <typeAliases>
 <!--        方式一：适合实体类较少的情况-->
