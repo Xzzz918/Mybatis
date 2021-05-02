@@ -1,7 +1,5 @@
-package com.gemini.Mapper;
+package com.gemini.mapper;
 
-import com.gemini.mapper.StuMapper;
-import com.gemini.mapper.TeachMapper;
 import com.gemini.pojo.Student;
 import com.gemini.pojo.Teacher;
 import com.gemini.utils.MyBatisUtil;
@@ -19,26 +17,28 @@ public class TeachTest {
     @Test
     public void teachMapperTest(){
         try(SqlSession sqlSession = MyBatisUtil.getSqlSession()){
-            List<Teacher> teachers = sqlSession.getMapper(TeachMapper.class).getTeacher();
-            for (Teacher teacher : teachers) {
-                System.out.println(teacher);
-            }
+            Teacher teacher = sqlSession.getMapper(TeachMapper.class).getTeach(1);
+            System.out.println(teacher);
         }
     }
 
     @Test
     public void teachMapperTest1(){
         try(SqlSession sqlSession = MyBatisUtil.getSqlSession()){
-            Teacher teacher = sqlSession.getMapper(TeachMapper.class).getTeacherStu(1);
-            System.out.println(teacher);
+            List<Student> students = sqlSession.getMapper(StuMapper.class).getStu();
+            for (Student student : students) {
+                System.out.println(student);
+            }
         }
     }
 
     @Test
     public void teachMapperTest2(){
         try(SqlSession sqlSession = MyBatisUtil.getSqlSession()){
-            Teacher teacher = sqlSession.getMapper(TeachMapper.class).getTeacherStu2(1);
-            System.out.println(teacher);
+            List<Student> students = sqlSession.getMapper(StuMapper.class).getStu2();
+            for (Student student : students) {
+                System.out.println(student);
+            }
         }
     }
 }

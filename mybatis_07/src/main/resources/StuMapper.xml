@@ -19,7 +19,6 @@
         select * from teacher where id = #{tid}
     </select>
 
-<!--====================================================================-->
     <!--方式二：按照结果嵌套处理：-->
     <select id="getStu2" resultMap="StuTeach2">
         select s.id sid,s.name sname,t.id tid,t.name tname

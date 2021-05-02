@@ -23,7 +23,7 @@
 
 <!--    注意:必须要在核心配置文件中绑定接口-->
     <mappers>
-        <mapper resource="TeachMapper.xml"/>
+        <mapper class="com.gemini.mapper.TeachMapper"/>
         <mapper resource="StuMapper.xml"/>
     </mappers>
 </configuration>
